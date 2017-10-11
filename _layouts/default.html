@@ -9,7 +9,24 @@
     <meta name="theme-color" content="#157878">
     <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="{{ '/assets/css/style.css?v=' | append: site.github.build_revision | relative_url }}">
-    <script type="text/javascript" src="/assets/js/transformVisualBlockFileUrl.js"></script>
+    <script type="text/javascript">
+      document.addEventListener("DOMContentLoaded", function() {
+        var visualBlocks = document.getElementsByClassName("visual-block");
+
+        for (var i=0; i<visualBlocks.length; ++i) {
+          var newBlock = visualBlocks[i].innerHTML.replace(/src[a-zA-Z\.\/\-]*/g, function (match, p1) {
+            return "<a href=\""
+              + "https://github.com/vuejs/vue/blob/v2.4.4/"
+              + match
+              + "\" target=\"_blank\">"
+              + match
+              +"</a>"
+          })
+
+          visualBlocks[i].innerHTML = newBlock;
+        }
+      });
+    </script>
   </head>
   <body>
     <section class="page-header">
