@@ -1,7 +1,8 @@
-# 从入口开始
+# 载入与初始化
 
 ## Vue 的 packages
 
+<pre class="visual-block">
  ┌───────────────────────────────────┐   ┌────────────────────────────────────┐
  │              runtime              │   │          entry-runtime.js          │
  │src/platforms/web/runtime/index.js │──▶│ src/platforms/web/entry-runtime.js │
@@ -30,6 +31,7 @@
                    │             │          entry-server-renderer.js          │
                    └────────────▶│ src/platforms/web/entry-server-renderer.js │
                                  └────────────────────────────────────────────┘
+</pre>
 
 ## Vue 的
 
